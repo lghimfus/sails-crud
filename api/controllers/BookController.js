@@ -15,4 +15,14 @@ module.exports = {
       return res.status(200).json({ success: true });
     });
   },
+
+  getBooks: function (req, res) {
+    Book.find().exec(function (err, books) {
+      if (err) {
+        return res.status(400).json({ success: false, message: err.details });
+      }
+
+      return res.status(200).json(books);
+    });
+  },
 };

@@ -46,6 +46,11 @@ module.exports.routes = {
     action: "createBook",
   },
 
+  "GET    /api/get/all": {
+    controller: "BookController",
+    action: "getBooks",
+  },
+
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
   //  ╚╩╝╚═╝╚═╝╩ ╩╚═╝╚═╝╩ ╩╚═╝

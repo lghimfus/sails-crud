@@ -1,7 +1,6 @@
 var supertest = require("supertest");
 const chai = require("chai");
 
-// Create a new book
 describe("BookController.createBook", () => {
   describe("#create()", function () {
     it("should create a new book", function (done) {
@@ -17,6 +16,23 @@ describe("BookController.createBook", () => {
           })
         )
         .set("Content-Type", "application/json")
+        .set("Accept", "application/json")
+        .expect(200)
+        .end(function (err, res) {
+          if (err) {
+            throw err;
+          }
+          done();
+        });
+    });
+  });
+});
+
+describe("BookController.getBook", () => {
+  describe("#get()", function () {
+    it("should get all the books", function (done) {
+      supertest(sails.hooks.http.app)
+        .get("/api/get/all")
         .set("Accept", "application/json")
         .expect(200)
         .end(function (err, res) {

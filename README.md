@@ -1,3 +1,9 @@
+## Nota
+
+* Am obtinut codul boilerplate ruland instructiunea `sails new`
+* Mai ramas este cod nefolositor
+* Testele nu sunt finalizate
+
 ## How to use
 
 ### Run the server

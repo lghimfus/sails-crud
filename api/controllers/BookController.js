@@ -25,4 +25,14 @@ module.exports = {
       return res.status(200).json(books);
     });
   },
+
+  getBookById: function (req, res) {
+    Book.findOne({ id: req.param("id") }).exec(function (err, book) {
+      if (err) {
+        return res.status(400).json({ success: false, message: err.details });
+      }
+
+      return res.status(200).json(book);
+    });
+  },
 };

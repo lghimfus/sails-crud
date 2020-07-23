@@ -22,4 +22,9 @@ module.exports.routes = {
     controller: "BookController",
     action: "updateOne",
   },
+
+  "DELETE     /api/delete/:id": {
+    controller: "BookController",
+    action: "deleteOne",
+  },
 };

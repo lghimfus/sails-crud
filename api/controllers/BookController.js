@@ -46,7 +46,26 @@ module.exports = {
     }
 
     if (updatedBook) {
-      return res.status(204).json(updatedBook);
+      return res.status(200).json(updatedBook);
+    } else {
+      return res.status(404).json({
+        success: false,
+        message: "Could not find a book for the specified id.",
+      });
+    }
+  },
+
+  deleteOne: async function (req, res) {
+    var deletedBook;
+
+    try {
+      deletedBook = await Book.destroyOne({ id: req.param("id") });
+    } catch (err) {
+      return res.status(400).json({ success: false, message: err.details });
+    }
+
+    if (deletedBook) {
+      return res.status(200).json({ success: true });
     } else {
       return res.status(404).json({
         success: false,

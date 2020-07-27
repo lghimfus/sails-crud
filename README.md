@@ -1,7 +1,7 @@
 ## Nota
 
 * Am obtinut codul boilerplate ruland instructiunea `sails new`
-* A mai ramas este cod nefolositor
+* A mai ramas ceva cod nefolositor
 * Testele nu sunt finalizate
 
 ## How to use
